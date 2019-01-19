@@ -39,6 +39,7 @@
     "postcss-reporter": "^6.0.0",
     "postcss-sass-color-functions": "^1.1.0",
     "postcss-url": "^8.0.0",
+    "precss": "^4.0.0",
     "reason-css-modules-loader": "^1.1.6",
     "style-loader": "^0.23.1",
     "webpack": "^4.0.1",

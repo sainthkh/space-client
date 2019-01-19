@@ -47,12 +47,7 @@ module.exports = {
                 require('postcss-import')({ addDependencyTo: webpack }),
                 require('postcss-url')(),
                 require('postcss-sass-color-functions'),
-                require('postcss-preset-env')({
-                  stage: 2,
-                  features: {
-                    'nesting-rules': true,
-                  }
-                }),
+                require('precss')(),
                 require('postcss-reporter')(),
                 require('postcss-browser-reporter')({
                   disabled: isProduction
