@@ -76,7 +76,7 @@ module.exports = {
   devServer: {
     compress: true,
     contentBase: outputDir,
-    port: process.env.PORT || 3000,
+    port: process.env.PORT || 3001,
     historyApiFallback: true
   },
   node: {
