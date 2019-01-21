@@ -1,7 +1,18 @@
 @import '../styles.scss';
 
+@keyframes rotate {
+  to { transform: rotate(360deg); }
+}
+
 .wrap {
   display: block;
   margin: auto;
   fill: $grey;
+  width: 64px;
+  height: 64px;
+
+  path:nth-child(2) {
+    transform-origin: center;
+    animation: rotate 1s linear infinite;
+  }
 }

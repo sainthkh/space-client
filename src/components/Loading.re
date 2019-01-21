@@ -13,10 +13,7 @@ let make = (_children) => {
   ...component,
 
   render: _self => {
-    <SVG 
-      className=styles##wrap
-      style=ReactDOMRe.Style.make(~width="100", ())
-    />
+    <SVG className=styles##wrap />
   }
 };
 
