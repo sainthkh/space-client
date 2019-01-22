@@ -24,6 +24,7 @@
     "reason-react"
   ],
   "ppx-flags": [
+    "graphql_ppx/ppx"
   ],
   "refmt": 3
 }

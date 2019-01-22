@@ -8,3 +8,4 @@ npm-debug.log
 *.bs.js
 /build
 /src/styles
+.graphql_ppx_cache

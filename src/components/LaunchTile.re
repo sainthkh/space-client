@@ -2,13 +2,15 @@ let styles = [%raw {| require("./LaunchTile.scss") |}]
 let component = ReasonReact.statelessComponent("LaunchTile")
 
 let make = (
-  ~launch: Types.launch,
+  ~launchID: int,
+  ~missionName: string,
+  ~rocketName: string,
+  ~backgroundUrl: option(string),
   _children
 ) => {
   ...component,
 
   render: _self => {
-    let { id, mission, rocket }: Types.launch = launch;
     let background = backgroundImage => {
       switch(backgroundImage) {
       | None => ReactDOMRe.Style.make(~background="#bdbdbd", ())
@@ -17,11 +19,11 @@ let make = (
     };
 
     <Link 
-      className=styles##wrap href={j|/launch/$id|j} 
-      style=background(launch.backgroundImage)
+      className=styles##wrap href={j|/launch/$launchID|j} 
+      style=background(backgroundUrl)
     >
-      <h3>{ ReasonReact.string(mission.name) }</h3>
-      <h5>{ ReasonReact.string(rocket.name) }</h5>
+      <h3>{ ReasonReact.string(missionName) }</h3>
+      <h5>{ ReasonReact.string(rocketName) }</h5>
     </Link>
   }
 }
