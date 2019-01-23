@@ -1,0 +1,36 @@
+@import "../styles.scss";
+
+.wrap {
+  flex-shrink: 0;
+  margin-top: auto;
+  background-color: white;
+  color: $text-secondary;
+  position: sticky;
+  bottom: 0;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  max-width: 460px;
+  padding: $unit * 2.5;
+  margin: 0 auto;
+}
+
+.menu-item {
+  flex-grow: 1;
+  font-family: inherit;
+  font-size: 20px;
+  color: inherit;
+  letter-spacing: 1.5;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+}
+
+.icon {
+  display: block;
+  width: 60px;
+  margin: 0 auto $unit;
+  fill: $secondary;
+}

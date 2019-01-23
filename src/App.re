@@ -30,9 +30,16 @@ let make = (_children) => {
     }
   },
 
-  render: _self => {
+  render: self => {
     <div>
-      <LaunchesPage />
+      <div className=styles##bar></div>
+      <div className=styles##container>
+        {switch(self.state.page){
+        | Index => <LaunchesPage />
+        | Error404 => <LaunchesPage /> /* temporary */
+        }}
+      </div>
+      <Footer />
     </div>
   }
 }

@@ -74,3 +74,20 @@ h5 {
     background-color: lighten($accent, 20%);
   }
 }
+
+.bar {
+  flex-shrink: 0;
+  height: 12px;
+  background-color: $primary;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: $unit * 3;
+  padding-bottom: $unit * 5;
+}
