@@ -9,3 +9,4 @@ ReactDOMRe.renderToElementWithId(
     <App />
   </ApolloProvider>, 
   "app");
+ReasonReact.Router.push("");

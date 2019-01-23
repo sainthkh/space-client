@@ -18,6 +18,7 @@ let make = (_children) => {
     let watchID = ReasonReact.Router.watchUrl(url => {
       switch(url.path) {
       | [""] => self.send(ChangePage(Index))
+      | ["launch", id] => self.send(ChangePage(Launch(id)))
       | _ => self.send(ChangePage(Error404))
       }
     })
@@ -36,6 +37,7 @@ let make = (_children) => {
       <div className=styles##container>
         {switch(self.state.page){
         | Index => <LaunchesPage />
+        | Launch(launchId) => <LaunchPage launchId=int_of_string(launchId) />
         | Error404 => <LaunchesPage /> /* temporary */
         }}
       </div>

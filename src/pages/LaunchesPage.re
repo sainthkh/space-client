@@ -13,7 +13,7 @@ type launches = {
   cursor: string,
   hasMore: bool,
   launches: array(launch),
-}
+};
 
 module GetLaunches = [%graphql {|
   query getLaunchList($after: String) {
