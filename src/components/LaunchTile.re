@@ -1,6 +1,13 @@
 let styles = [%raw {| require("./LaunchTile.scss") |}]
 let component = ReasonReact.statelessComponent("LaunchTile")
 
+let background = backgroundImage => {
+  switch(backgroundImage) {
+  | None => ReactDOMRe.Style.make(~background="#bdbdbd", ())
+  | Some(url) => ReactDOMRe.Style.make(~background={j|url("$url")|j}, ())
+  }
+};
+
 let make = (
   ~launchID: int,
   ~missionName: string,
@@ -11,15 +18,9 @@ let make = (
   ...component,
 
   render: _self => {
-    let background = backgroundImage => {
-      switch(backgroundImage) {
-      | None => ReactDOMRe.Style.make(~background="#bdbdbd", ())
-      | Some(url) => ReactDOMRe.Style.make(~background={j|url("$url")|j}, ())
-      }
-    };
-
     <Link 
-      className=styles##wrap href={j|/launch/$launchID|j} 
+      className=Cn.make([styles##wrap, "card"])
+      href={j|/launch/$launchID|j} 
       style=background(backgroundUrl)
     >
       <h3>{ ReasonReact.string(missionName) }</h3>

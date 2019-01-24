@@ -1,13 +1,11 @@
+@import "../styles.scss";
+
 .wrap {
+  @extend %card;
+  
   display: block;
   height: 193px;
   margin-top: 16px;
-  padding: 32px 40px;
-  border-radius: 7px;
-
-  color: white;
-  background-size: cover;
-  background-position: center;
 
   text-decoration: none;
 

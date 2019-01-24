@@ -1,0 +1,8 @@
+@import "../styles.scss";
+
+.wrap {
+  @extend %card;
+
+  height: 365px;
+  margin-bottom: $unit * 4;
+}
