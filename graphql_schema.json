@@ -409,7 +409,7 @@
               "deprecationReason": null
             },
             {
-              "name": "type",
+              "name": "type_",
               "description": "",
               "args": [],
               "type": {
