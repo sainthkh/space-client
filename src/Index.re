@@ -6,7 +6,7 @@ let client =
 
 ReactDOMRe.renderToElementWithId(
   <ApolloProvider client=client>
-    <App />
+    <LoginPage />
   </ApolloProvider>, 
   "app");
 ReasonReact.Router.push("");
