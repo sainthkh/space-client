@@ -57,7 +57,7 @@ let make = (_children) => {
                 |> Js.Array.mapi((launch, i) => {
                   <LaunchTile
                     key=string_of_int(i)
-                    launchID=launch.id
+                    launchId=launch.id
                     missionName=launch.mission.name
                     rocketName=launch.rocket.name
                     backgroundUrl=None

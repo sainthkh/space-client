@@ -9,7 +9,7 @@ let background = backgroundImage => {
 };
 
 let make = (
-  ~launchID: int,
+  ~launchId: int,
   ~missionName: string,
   ~rocketName: string,
   ~backgroundUrl: option(string),
@@ -20,7 +20,7 @@ let make = (
   render: _self => {
     <Link 
       className=Cn.make([styles##wrap, "card"])
-      href={j|/launch/$launchID|j} 
+      href={j|/launch/$launchId|j} 
       style=background(backgroundUrl)
     >
       <h3>{ ReasonReact.string(missionName) }</h3>

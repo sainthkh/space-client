@@ -19,6 +19,7 @@ let make = (_children) => {
       switch(url.path) {
       | [""] => self.send(ChangePage(Index))
       | ["launch", id] => self.send(ChangePage(Launch(id)))
+      | ["profile"] => self.send(ChangePage(Profile))
       | _ => self.send(ChangePage(Error404))
       }
     })
@@ -38,6 +39,7 @@ let make = (_children) => {
         {switch(self.state.page){
         | Index => <LaunchesPage />
         | Launch(launchId) => <LaunchPage launchId=int_of_string(launchId) />
+        | Profile => <ProfilePage />
         | Error404 => <LaunchesPage /> /* temporary */
         }}
       </div>
