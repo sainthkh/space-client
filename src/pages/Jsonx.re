@@ -10,9 +10,20 @@ let array = ar =>
   Json.decodeArray(ar)
   ->mapWithDefault([||], a => a);
 
+let string = str =>
+  Json.decodeString(str)
+  ->mapWithDefault("", s => s);
+
+let boolean = boolean => 
+  Json.decodeBoolean(boolean)
+  ->mapWithDefault(false, b => b)
+
 let defaultIfNone = (dict, key, default) => 
   dict->get(key)
   ->mapWithDefault(default, v => v);
+
+let defaultBooleanIfNone = (dict, key, default) => 
+  defaultIfNone(dict, key, Js.Json.boolean(default))->boolean
 
 let emptyIfNone = (dict, key) => {
   let json = dict->Dict.get(key)

@@ -3,3 +3,4 @@ type page =
   | Error404
   | Launch(string)
   | Profile
+  | Login
